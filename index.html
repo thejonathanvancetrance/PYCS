@@ -39,7 +39,7 @@
 		
 		<div class="row">
 			<div class="col-11">
-				<span class="col-12 edmondstyleXSmall" ><button id="estimationModeBtn">Estimation Mode</button></span>
+				<span class="col-12 offset-6 edmondstyleXSmall" ><button id="aboutBtn">About</button></span>
 			</div>
 		</div>
 			
@@ -49,11 +49,16 @@
 			</div>
 		</div>
 		
-		<div class="estimationMode">
+		<div class="about">
 			
 			<div class="row">
 				<div class="col-11">
-					<span class="col-12 offset-1 edmondstyleXSmall"><button id="pretrainedBtn">Use Pre-trained Models</button></span>
+					<span class="col-12 offset-1 edmondstyleXSmall">PYCS is a What-If tool. Submit your data in .csv format, and PYCS will
+					give you its best prediction of crop yields (alfalfa) given your data. PYCS uses machine learning models to
+					forecast crop yields, so this tool can help you plan for shortages or surpluses based on factors like rain,
+					temperature, solar radiation, and more. What if reality ends up closely resembling the details you provide?
+					What if historical trends continue into the future? These are the questions PYCS intends to answer! (Please
+					allow 1 week for results.)</span>
 				</div>
 			</div>
 			
@@ -62,96 +67,220 @@
 					<span class="col-12 edmondstyleXSmall"></span>
 				</div>
 			</div>
-			
-			<div class="row pretrainedMode">
-				<div class="col-6 offset-2"><span class="edmondstyleXSmall"><button id="trainTestSameBtn">Train & Test on Same Dataset With Split</button></span>
-					<div class="row trainTestSame">
-					
-						<div class="row">
-							<div class="col-11">
-								<span class="col-12 edmondstyleXSmall"></span>
-							</div>
-						</div>
+		
+		</div><!-- </about> -->
 
-						<form action="">
-						  <input type="file" id="testTrainData" name="testTrainData">
-						  <input type="submit">
-						</form>
-					</div>
+		<form action="" id="mainForm">
+		
+			<div class="row">
+				<div class="col-11 edmondstyleXSmall">
+					<input type="checkbox" id="annualizedChk">
+					<label for="annualizedChk"><strong>Annualized Mode</strong></label>
 				</div>
+			</div>
 			
-				<div class="row">
-					<div class="col-11">
-						<span class="col-12 edmondstyleXSmall"></span>
-					</div>
+			
+			<div class="row">
+				<div class="col-11">
+					<span class="col-12 edmondstyleXSmall"></span>
+				</div>
+			</div>
+			
+			<div class="row" id="fileFormatPerCut">
+				<div class="col-11 edmondstyleXSmall" id="fileFormat">
+					<strong>File Format:</strong> .csv, minimum 2 columns - (1) date_of_cut (mm/dd/yyyy) and (2) yield (tons/acre).
+				</div>
+			</div>
+			</div>
+			
+			<div class="row" id="fileFormatPerYear">
+				<div class="col-11 edmondstyleXSmall" id="fileFormat">
+					<strong>File Format:</strong> .csv, minimum 2 columns - (1) year_of_cut (yyyy) and (2) yield (tons/acre).
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-11">
+					<span class="col-12 edmondstyleXSmall"></span>
+				</div>
+			</div>
+				
+			<div class="row">
+				<div class="col-5 edmondstyleXSmall">
+					<label for="email"><strong>Your email address:</strong></label>
 				</div>
 				
-				<div class="col-6 offset-2"><span class="edmondstyleXSmall"><button id="TDABtn">Trivial Domain Adaptation (TDA)</button></span>
-					<div class="row TDA">
-					
-						<div class="row">
-							<div class="col-11">
-								<span class="col-12 edmondstyleXSmall"></span>
-							</div>
-						</div>
-						
-						<form action="">
-						  <input type="file" id="tdaTarget" name="tdaTarget">
-						  <input type="submit">
-						</form>
-					</div>
+				<div class="col-7 edmondstyleXSmall">
+					<label for="url"><strong>URL to your .csv dataset:</strong> (on GitHub, Google Drive, etc.)</label>
 				</div>
+			</div>
 			
-				<div class="row">
-					<div class="col-11">
-						<span class="col-12 edmondstyleXSmall"></span>
-					</div>
+			<div class="row">
+				<div class="col-5 edmondstyleXSmall">
+					<input class="pycsTextbox" type="text" id="email" />
 				</div>
 				
-				<div class="col-6 offset-2"><span class="edmondstyleXSmall"><button id="STDABtn">Synthetic Tabular Domain Adaptation (STDA)</button></span>
-					<div class="row STDA">
-					
-						<div class="row">
-							<div class="col-11">
-								<span class="col-12 edmondstyleXSmall"></span>
-							</div>
-						</div>
-						
-						<form action="">
-						  <input type="file" id="STDAtargetData" name="STDAtargetData">
-						  <input type="submit">
-						</form>
-					</div>
+				<div class="col-7 edmondstyleXSmall">
+					<input class="pycsTextbox" type="text" id="url" />
 				</div>
+			</div>
 			
-				<div class="row">
-					<div class="col-11">
-						<span class="col-12 edmondstyleXSmall"></span>
-					</div>
+			<div class="row">
+				<div class="col-11">
+					<span class="col-12 edmondstyleXSmall"></span>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-5 edmondstyleXSmall">
+					<label for="location"><strong>Your location:</strong> (City, State)</label>
 				</div>
 				
-				<div class="col-6 offset-2"><span class="edmondstyleXSmall"><button id="localSynthBtn">Synthesize Data from Local Dataset</button></span>
-					<div class="row localSynth">
-					
-						<div class="row">
-							<div class="col-11">
-								<span class="col-12 edmondstyleXSmall"></span>
-							</div>
-						</div>
-						
-						<form action="">
-						  <input type="file" id="localSynthData" name="localSynthData">
-						  <input type="submit">
-						</form>
-					</div>
+				<div class="col-7 edmondstyleXSmall">
+					<label for="name"><strong>Name this dataset:</strong> (ex.: what_if_low_rain, actual_radiation, etc.)</label>
 				</div>
+			</div>
 			
-				<div class="row">
-					<div class="col-11">
-						<span class="col-12 edmondstyleXSmall"></span>
-					</div>
+			<div class="row">
+				<div class="col-5 edmondstyleXSmall">
+					<input class="pycsTextbox" type="text" id="location" />
 				</div>
-			</div><!-- </preTrainedMode> -->
+				
+				<div class="col-7 edmondstyleXSmall">
+					<input class="pycsTextbox" type="text" id="name" />
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-11">
+					<span class="col-12 edmondstyleXSmall"></span>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-11 edmondstyleXSmall"><strong>Features You Are Providing:</strong></div>
+			</div>
+				
+			<div class="row">
+				<div class="col-11">
+					<span class="col-12 edmondstyleXSmall"></span>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-3">
+					<input type="checkbox" id="yieldChk" checked="true" disabled="true"/>
+					<label for="yieldChk">Yield</label>
+				</div>
+				
+				<div class="col-3">	
+					<input type="checkbox" id="dateCutChk" checked="true" disabled="true"/>
+					<label for="dateCutChk">Date of cut</label>
+				</div>
+				
+				<div class="col-3">
+					<input type="checkbox" id="rainChk"/>
+					<label for="rainChk">Rain</label>
+						
+				</div>
+				
+				<div class="col-3">
+					<input type="checkbox" id="minTempChk"/>
+					<label for="minTempChk">Minimum Average Temperature</label>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-3">
+					<input type="checkbox" id="maxTempChk"/>
+					<label for="maxTmpChk">Maximum Average Temperature</label>
+				</div>
+				
+				<div class="col-3">
+					<input type="checkbox" id="radChk"/>
+					<label for="radChk">Accummulated solar radiation</label>
+				</div>
+				
+				<div class="col-3">	
+					<input type="checkbox" id="dateSownChk"/>
+					<label for="dateSownChk">Date sown</label>
+				</div>
+				
+				<div class="col-3">
+					<input type="checkbox" id="varietyChk"/>
+					<label for="varietyChk">Variety</label>	
+				</div>
+			</div>
+			
+
+		
+			<div class="row">
+				<div class="col-11">
+					<span class="col-12 edmondstyleXSmall"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-3 edmondstyleXSmall">
+						
+					<select class="prevCuts" id="prevCuts">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					<label for="prevCuts"><strong># Previous Cuts</strong></label>
+					
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-3 edmondstyleXSmall">
+					<select class="prevYears" id="prevYears">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select>
+					<label for="prevYears"><strong># Previous Years</strong></label>
+					
+				</div>
+			</div>
+		
+			<div class="row">
+				<div class="col-11">
+					<span class="col-12 edmondstyleXSmall"></span>
+				</div>
+			</div>
+		
+			<div class="row">
+				<div class="col-3 edmondstyleXSmall">
+					<strong>Prediction Accuracy:</strong>
+				</div>
+			</div>
+			
+			<div class="row">
+				
+				<div class="col-3">
+					<input type="checkbox" id="3class"/>
+					<label for="3class">3 classes (hi, md, lo)
+				</div>
+				
+				<div class="col-3">
+					<input type="checkbox" id="nearestTon"/>
+					<label for="nearestTon">Nearest ton
+				</div>
+				
+				<div class="col-3">
+					<input type="checkbox" id="nearestTenth"/>
+					<label for="nearestTenth">Nearest tenth ton
+				</div>
+				
+				<div class="col-3">
+					<input type="checkbox" id="nearestHundredth"/>
+					<label for="nearestHundredth">Nearest hundredth ton
+				</div>
+			</div>
 				
 			
 			<div class="row">
@@ -161,8 +290,58 @@
 			</div>
 			
 			<div class="row">
-				<div class="col-11">
-					<span class="col-12 offset-1 edmondstyleXSmall"><button>Train New Models</button></span>
+				<div class="col-3 edmondstyleXSmall">
+					<strong>Train/Test:</strong>
+				</div>
+			</div>
+			
+			<fieldset>
+			<legend></legend>
+			<div class="row">
+				<div class="col-4 offset-2">
+					<input type="radio" id="trainTestOwn" checked name="trainTestOptions"/>
+					<label for="trainTestOwn">Split submitted dataset into train & test
+				</div>
+				
+				<div class="col-6">
+					<input type="radio" id="testOwnSelectStates" name="trainTestOptions"/>
+					<label for="trainTestOwn">Test on submitted dataset, train on (select):</label>
+					<select multiple="true" id="selectTrainingState" size="1">
+						<option value="GA">GA</option>
+						<option value="PA">PA</option>
+						<option value="KY">KY</option>
+						<option value="ND">ND</option>
+						<option value="OH">OH</option>
+						<option value="MS">MS</option>
+						<option value="WI">WI</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-4 offset-2">
+					<input type="radio" id="trainOwnTestTarget" name="trainTestOptions"/>
+					<label for="trainOwnTestTarget">Train on submitted dataset, test on dataset in other submission</label>
+				</div>
+				
+				<div class="col-6">
+					<input type="radio" id="testOwnTrainSource" name="trainTestOptions"/>
+					<label for="testOwnTrainSource">Test on submitted dataset, train on dataset in other submission</label>
+				</div>
+			</div>
+			</fieldset>
+			
+			<div class="row">
+				<div class="col-9 offset-2">
+					<input type="checkbox" id="synthData"/>
+					<label for="synthData">Increase training dataset size with data synthesis</label>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-9 offset-2">
+					<input type="text" id="numSynthSamples"/>
+					<label for="numSynthSamples"># synth samples (&lt;= 500K)</label>
 				</div>
 			</div>
 			
@@ -171,24 +350,32 @@
 					<span class="col-12 edmondstyleXSmall"></span>
 				</div>
 			</div>
-		
-		</div><!-- </estimationMode> -->
-		
-		<div class="row">
-			<div class="col-11">
-				<span class="col-12 edmondstyleXSmall"><button>Prediction Mode</button></span>
-			</div>
-		</div>
-		
-		<!-- <div class="row">	
-			<div class="col-12 offset-1 artistStatement edmondstyleXSmall">
-				Guitar<br/>
-			</div>
-		</div> -->
 			
-		
+			<div class="row">
+				<div class="col-11 edmondstyleXSmall">
+					<label for="notes"><strong>Notes:</strong></label>
+				</div>
+			</div>
 			
-		
+			<div class="row">
+				<div class="col-11">
+					<input type="textarea" class="notes" id="notes"/>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-11">
+					<span class="col-12 edmondstyleXSmall"></span>
+				</div>
+			</div>
+			
+			
+			<div class="row">
+				<div class="col-3 offset-5">
+					<input type="submit" value="Submit Form"/>
+				</div>
+			</div>
+		</form><!-- </mainForm> -->
 		
 	</body>
 	
