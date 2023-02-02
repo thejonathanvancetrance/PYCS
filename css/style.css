@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+input[type=checkbox] {
+  width: 25px;
+  height:25px;
+}
+
+input[type=radio] {
+  width: 25px;
+  height:25px;
+}
+
+.notes {
+	height: 100px;
+	width: 500px;
+}
+
+.pycsTextbox {
+	width: 400px;
+}
+
 .edmondstyleLarge {
 	font-family: "Montserrat", sans-serif;
 	font-size: 48pt;
@@ -20,7 +39,7 @@
 	font-family: "Montserrat", sans-serif;
 	font-size: 14pt;
 	color: black;
-	line-height: 1.75;
+	/*line-height: 1.75;*/
 }
 
 
@@ -61,7 +80,7 @@ body {
 	image-orientation: from-image;
 }
 
-.estimationMode {
+.about {
 	display: none;
 }
 
